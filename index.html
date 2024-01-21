@@ -7922,7 +7922,7 @@ function timer() {
   } else {
     if(min !== 0 && sec === 0) {
       min--;
-      sec = 2;
+      sec = 59;
     } else if (min === 0 && sec === 0) {
       clearInterval(intervalId); // Stops the interval
       timerrunning = false; // Indicates that the timer is not running
