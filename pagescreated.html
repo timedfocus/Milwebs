@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO meta tags -->
+    <meta name="description" content="Timedfocus is a web app that enhances your productivity with personalized backgrounds, music, custom timer, desktop notifications, to-do lists, and mainly focusing on the Pomodoro Technique, a proven time management method that helps you work efficiently and effectively.">
+    <meta name="keywords" content="pomodoro timer, pomodoro technique, productivity app, focus timer, time management, work cycle, break time, task list, to-do list, background music, desktop notifications, time tracking, timeboxing, custom timer, focus booster, focus mode, distraction-free, study timer, work session, pomodoro tracker, pomodoro method, productivity tool, focus app, timer app, pomodoro clock">
+
+    <meta name="author" content="Timedfocus">
+
+
+
+
+
+
+
+
+
+    <title>Statistics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+
+<style>
+  .bti{
+    background-color: rgb(128, 255, 219);
+    --glow-color: rgb(97, 239, 255);
+
+      background: linear-gradient(to right, #1d2671, #c33764);
+      background: -webkit-linear-gradient(to right, #1d2671, #c33764);
+
+  }
+
+
+
+
+
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --glow-color: hsl(186 100% 69%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+.glowing-bt {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+
+
+.glowing-bt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-bt:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-bt:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-bt:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-bt:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-bt:hover:after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.glowing-btn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.glowing- {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+
+
+.glowing-::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-:hover:after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.glowing {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+
+
+.glowing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing:hover:after {
+  opacity: 1;
+}
+
+
+
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 10px;
+  
+  /* Position the tooltip text */
+ 
+  
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --calendar-bg-color: #262829;
+    --calendar-font-color: #FFF;
+    --weekdays-border-bottom-color: #404040;
+    --calendar-date-hover-color: #505050;
+    --calendar-current-date-color: #1b1f21;
+    --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
+    --calendar-today-innerborder-color: transparent;
+    --calendar-nextprev-bg-color: transparent;
+    --next-prev-arrow-color : #FFF;
+    --calendar-border-radius: 16px;
+    --calendar-prevnext-date-color: #484848
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.calendar {
+    font-family: 'IBM Plex Sans', sans-serif;
+    position: relative;
+    max-width: 400px; /*change as per your design need */
+    min-width: 320px;
+    background: var(--calendar-bg-color);
+    color: var(--calendar-font-color);
+    margin: 20px auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-weight: normal;
+    border-radius: var(--calendar-border-radius);
+}
+
+.calendar-inner {
+    padding: 10px 10px;
+}
+
+.calendar .calendar-inner .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.calendar .calendar-inner .calendar-body div {
+    padding: 4px;
+    min-height: 30px;
+    line-height: 30px;
+    border: 1px solid transparent;
+    margin: 10px 2px 0px;
+}
+
+.calendar .calendar-inner .calendar-body div:nth-child(-n+7) {
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--weekdays-border-bottom-color);
+}
+
+.calendar .calendar-inner .calendar-body div:nth-child(-n+7):hover {
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--weekdays-border-bottom-color);
+}
+
+.calendar .calendar-inner .calendar-body div>a {
+    color: var(--calendar-font-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar .calendar-inner .calendar-body div:hover {
+    border: 1px solid var(--calendar-date-hover-color);
+    border-radius: 4px;
+}
+
+.calendar .calendar-inner .calendar-body div.empty-dates:hover {
+    border: 1px solid transparent;
+}
+
+.calendar .calendar-inner .calendar-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.calendar .calendar-inner .calendar-today-date {
+    display: grid;
+    text-align: center;
+    cursor: pointer;
+    margin: 3px 0px;
+    background: var(--calendar-current-date-color);
+    padding: 8px 0px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-year-month {
+    display: flex;
+    min-width: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next {
+    text-align: right;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-year-label,
+.calendar .calendar-inner .calendar-controls .calendar-year-month .calendar-month-label {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today {
+    background: var(--calendar-today-color);
+    border-radius: 4px;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today:hover {
+    border: 1px solid transparent;
+}
+
+.calendar .calendar-inner .calendar-body .calendar-today a {
+    outline: 2px solid var(--calendar-today-innerborder-color);
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a,
+.calendar .calendar-inner .calendar-controls .calendar-prev a {
+    color: var(--calendar-font-color);
+    font-family: arial, consolas, sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    padding: 4px 12px;
+    display: inline-block;
+    background: var(--calendar-nextprev-bg-color);
+    margin: 10px 0 10px 0;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg {
+    height: 20px;
+    width: 20px;
+}
+
+.calendar .calendar-inner .calendar-controls .calendar-next a svg path,
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg path{
+    fill: var(--next-prev-arrow-color);
+}
+
+.calendar .calendar-inner .calendar-body .prev-dates,
+.calendar .calendar-inner .calendar-body .next-dates {
+    color: var(--calendar-prevnext-date-color);
+}
+
+.calendar .calendar-inner .calendar-body .prev-dates:hover,
+.calendar .calendar-inner .calendar-body .next-dates:hover {
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+
+
+
+
+</style>
+
+
+  <body style="background-color: rgb(0, 0, 0); overflow-y: auto;">
+
+    <div style="display: flex; flex-direction: column; row-gap: 60px;">
+
+    <div style="display: flex; flex-direction: row; column-gap: 100px; align-items: center; justify-content: center;">
+
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <canvas id="myChart" style="width:500px; height: 400px;"></canvas>
+              <div>
+    
+                <button class="prevmont glowing">Show Previous Days</button>
+                <button class="resetgrap glowing-">Reset Graph</button>
+              
+              </div>
+      </div>
+
+
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+    <canvas id="myChart1" style="width:500px; height: 400px;"></canvas>
+          <div>
+
+            <button class="prevmonth glowing-bt">Show Previous Months</button>
+            <button class="resetgraph glowing-btn">Reset Graph</button>
+          
+          </div>
+  </div>
+
+
+
+  </div>
+
+  <div>
+  
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <div class="calendar" >
+  
+        <div class="tooltip" style=" align-items: center;  display: flex; padding-left: 175px;"><span style="display: inline-block; font-size: 15px; color: #ffffff; background: #000000; border-radius: 5px; padding: 10px 20px; opacity: 0.2;">?</span>
+          <span class="tooltiptext">Streak System. If a timer is completed, the date will turn red.</span>
+        </div>
+      </div>
+      
+    </div>
+
+</div>
+
+</div>
+    <script>
+
+
+
+// Save the value when it changes
+function saveTotalMinutes1() {
+  var totalMinutes1 = document.querySelector('.totalminutes1').textContent;
+  var today = new Date();
+  var dateKey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  localStorage.setItem('totalMinutes1', totalMinutes1);
+  localStorage.setItem('totalMinutes1SaveTime', new Date().getTime());
+  localStorage.setItem('totalMinutes1_' + dateKey, totalMinutes1);
+  console.log('totalMinutes1:', totalMinutes1);
+}
+
+
+window.onload = function() {
+  var script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js';
+  document.head.appendChild(script);
+
+  script.onload = function() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var today = new Date();
+    var xValues = Array.from({length: 10}, (_, i) => new Date(today.getFullYear(), today.getMonth(), today.getDate() - i));
+    var yValues = xValues.map(function(date) {
+      var dateKey = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+      var totalMinutes1 = Number(localStorage.getItem('totalMinutes1_' + dateKey));
+      return !isNaN(totalMinutes1) ? totalMinutes1 : 0;
+    });
+
+    
+    xValues.reverse();
+    yValues.reverse();
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: xValues.map(date => date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()),
+        datasets: [{
+          label: 'Total Focus Time (Days)',
+          fill: true,
+          backgroundColor:"rgba(97, 239, 255,0.5)",
+          borderColor: "rgba(97, 239, 255,1.0)",
+          lineTension: 0,
+          data: yValues
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            gridLines: {
+              color: "rgba(97, 239, 255, 0.15)"
+            },
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              }
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              color: "rgba(97, 239, 255, 0.15)"
+            },
+            ticks: {
+              beginAtZero: true,
+              stepSize: 15,
+              callback: function(value, index, values) {
+                if (value >= 60) {
+                  var hours = Math.floor(value / 60);
+                  var minutes = value % 60;
+                  return hours + 'h ' + minutes + 'min';
+                }
+                return value + ' min';
+              }
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var value = tooltipItem.yLabel;
+              if (value >= 60) {
+                var hours = Math.floor(value / 60);
+                var minutes = value % 60;
+                return hours + 'h ' + minutes + 'min';
+              }
+              return value + ' min';
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    
+
+    // Add event listener for 'Show Previous Dates' button
+    document.querySelector('.prevmont').addEventListener('click', function() {
+      // Add a new date at the beginning of the xValues array
+      var lastDate = new Date(xValues[0].getTime() - 24*60*60*1000);
+      xValues.unshift(lastDate);
+
+      // Retrieve totalMinutes1 from localStorage for the new date and convert it to a number
+      var dateKey = lastDate.getFullYear() + '-' + (lastDate.getMonth() + 1) + '-' + lastDate.getDate();
+      var totalMinutes1 = Number(localStorage.getItem('totalMinutes1_' + dateKey));
+      yValues.unshift(!isNaN(totalMinutes1) ? totalMinutes1 : 0);
+
+      // Update the labels array in the chart's data object
+      myChart.data.labels = xValues.map(date => date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
+
+      // Update the chart
+      myChart.update();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Store the original xValues and yValues
+var originalXValues = [...xValues];
+var originalYValues = [...yValues];
+
+
+// Add event listener for 'Reset Graph' button
+document.querySelector('.resetgrap').addEventListener('click', function() {
+  // Reset xValues and yValues to their original state
+  xValues = [...originalXValues];
+  yValues = [...originalYValues];
+
+  // Update the labels array and data array in the chart's data object
+  myChart.data.labels = xValues.map(date => date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
+  myChart.data.datasets[0].data = yValues;
+
+  // Update the chart
+  myChart.update();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+var script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js';
+  document.head.appendChild(script);
+
+  script.onload = function() {
+    // Once the library is loaded, you can create the chart
+    var ctx = document.getElementById('myChart1').getContext('2d');
+
+    var today = new Date();
+
+    // Initialize the number of months to display
+    var numMonths = 12;
+    var originalNumMonths = numMonths;  // Store the original number of months
+
+    // Function to generate the last numMonths
+    function generateMonths(numMonths) {
+      return Array.from({length: numMonths}, (_, i) => new Date(today.getFullYear(), today.getMonth() - i + 1));
+    }
+
+    // Generate the initial months
+    var xValues = generateMonths(numMonths);
+
+    // Retrieve totalMinutes1 from localStorage for each month and convert it to a number
+    var yValues = xValues.map(function(date) {
+      var monthKey = date.getFullYear() + '-' + (date.getMonth() + 1);  // Change this to retrieve data for each month
+      var totalMinutes1 = Number(localStorage.getItem('totalMinutes1_' + monthKey)) || 0;
+      return totalMinutes1;
+    });
+
+    /*
+    // Reverse the arrays to display the months in ascending order
+    xValues.reverse();
+    yValues.reverse();*/
+
+    // Array of month names for formatting the x-axis labels
+    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',  // Change this to 'bar' to create a bar chart
+      data: {
+        labels: xValues.map(date => monthNames[date.getMonth()] + '/' + date.getFullYear()),
+        datasets: [{
+          label: 'Total Focus Time (Months)',  // This line sets the label for the dataset
+          fill: true,  // This line enables the fill below the line
+          backgroundColor:"rgba(97, 239, 255,1)",  // This line sets the fill color
+          
+          borderColor: "rgba(97, 239, 255,1.0)",
+          data: yValues
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            gridLines: {
+              color: "rgba(97, 239, 255, 0.15)" // This line changes the color of the x-axis grid lines
+            },
+            ticks: {
+              callback: function(value, index, values) {
+                // Format the x-axis labels as dates
+                return value;
+              }
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              color: "rgba(97, 239, 255, 0.15)" // This line changes the color of the y-axis grid lines
+            },
+            ticks: {
+              beginAtZero: true,
+              stepSize: 15,
+              callback: function(value, index, values) {
+                // Format the y-axis labels as hours and minutes if the value is 60 or more
+                if (value >= 60) {
+                  var hours = Math.floor(value / 60);
+                  var minutes = value % 60;
+                  return hours + 'h ' + minutes + 'min';
+                }
+                return value + ' min';
+              }
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var value = tooltipItem.yLabel;
+              // Format the tooltip labels as hours and minutes if the value is 60 or more
+              if (value >= 60) {
+                var hours = Math.floor(value / 60);
+                var minutes = value % 60;
+                return hours + 'h ' + minutes + 'min';
+              }
+              return value + ' min';
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+
+    // Function to update the chart
+    function updateChart() {
+      // Increase the number of months
+      numMonths++;
+
+      // Generate the new months
+      var newMonths = generateMonths(numMonths);
+
+      // Update the chart's data
+      myChart.data.labels = newMonths.map(date => monthNames[date.getMonth()] + '/' + date.getFullYear());
+      myChart.data.datasets[0].data = newMonths.map(function(date) {
+        var monthKey = date.getFullYear() + '-' + (date.getMonth() + 1);
+        var totalMinutes1 = Number(localStorage.getItem('totalMinutes1_' + monthKey)) || 0;
+        return totalMinutes1;
+      });
+
+      // Update the chart
+      myChart.update();
+    }
+
+    // Function to reset the chart
+    function resetChart() {
+      // Reset the number of months
+      numMonths = originalNumMonths;
+
+      // Generate the original months
+      var originalMonths = generateMonths(originalNumMonths);
+
+      // Update the chart's data
+      myChart.data.labels = originalMonths.map(date => monthNames[date.getMonth()] + '/' + date.getFullYear());
+      myChart.data.datasets[0].data = originalMonths.map(function(date) {
+        var monthKey = date.getFullYear() + '-' + (date.getMonth() + 1);
+        var totalMinutes1 = Number(localStorage.getItem('totalMinutes1_' + monthKey)) || 0;
+        return totalMinutes1;
+      });
+
+      // Update the chart
+      myChart.update();
+    }
+
+    document.querySelector('.prevmonth').addEventListener('click', updateChart);
+    
+
+
+    document.querySelector('.resetgraph').addEventListener('click', resetChart);
+    
+
+
+
+
+
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+  };
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function CalendarControl() {
+    const calendar = new Date();
+    const calendarControl = {
+      localDate: new Date(),
+      prevMonthLastDate: null,
+      calWeekDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      calMonthName: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      daysInMonth: function (month, year) {
+        return new Date(year, month, 0).getDate();
+      },
+      firstDay: function () {
+        return new Date(calendar.getFullYear(), calendar.getMonth(), 1);
+      },
+      lastDay: function () {
+        return new Date(calendar.getFullYear(), calendar.getMonth() + 1, 0);
+      },
+      firstDayNumber: function () {
+        return calendarControl.firstDay().getDay() + 1;
+      },
+      lastDayNumber: function () {
+        return calendarControl.lastDay().getDay() + 1;
+      },
+      getPreviousMonthLastDate: function () {
+        let lastDate = new Date(
+          calendar.getFullYear(),
+          calendar.getMonth(),
+          0
+        ).getDate();
+        return lastDate;
+      },
+      navigateToPreviousMonth: function () {
+        calendar.setMonth(calendar.getMonth() - 1);
+        calendarControl.attachEventsOnNextPrev();
+      },
+      navigateToNextMonth: function () {
+        calendar.setMonth(calendar.getMonth() + 1);
+        calendarControl.attachEventsOnNextPrev();
+      },
+      navigateToCurrentMonth: function () {
+        let currentMonth = calendarControl.localDate.getMonth();
+        let currentYear = calendarControl.localDate.getFullYear();
+        calendar.setMonth(currentMonth);
+        calendar.setYear(currentYear);
+        calendarControl.attachEventsOnNextPrev();
+      },
+      displayYear: function () {
+        let yearLabel = document.querySelector(".calendar .calendar-year-label");
+        yearLabel.innerHTML = calendar.getFullYear();
+      },
+      displayMonth: function () {
+        let monthLabel = document.querySelector(
+          ".calendar .calendar-month-label"
+        );
+        monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
+      },
+      selectDate: function (e) {
+        console.log(
+          `${e.target.textContent} ${
+            calendarControl.calMonthName[calendar.getMonth()]
+          } ${calendar.getFullYear()}`
+        );
+      },
+      plotSelectors: function () {
+        document.querySelector(
+          ".calendar"
+        ).innerHTML += `<div class="calendar-inner"><div class="calendar-controls">
+          <div class="calendar-prev"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M88.2 3.8L35.8 56.23 28 64l7.8 7.78 52.4 52.4 9.78-7.76L45.58 64l52.4-52.4z"/></svg></a></div>
+          <div class="calendar-year-month">
+          <div class="calendar-month-label"></div>
+          <div>-</div>
+          <div class="calendar-year-label"></div>
+          </div>
+          <div class="calendar-next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
+          </div>
+          <div class="calendar-today-date">Today: 
+            ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}, 
+            ${calendarControl.localDate.getDate()}, 
+            ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]} 
+            ${calendarControl.localDate.getFullYear()}
+          </div>
+          <div class="calendar-body"></div></div>`;
+      },
+      plotDayNames: function () {
+        for (let i = 0; i < calendarControl.calWeekDays.length; i++) {
+          document.querySelector(
+            ".calendar .calendar-body"
+          ).innerHTML += `<div>${calendarControl.calWeekDays[i]}</div>`;
+        }
+      },
+      plotDates: function () {
+      
+        document.querySelector(".calendar .calendar-body").innerHTML = "";
+        calendarControl.plotDayNames();
+        calendarControl.displayMonth();
+        calendarControl.displayYear();
+        let count = 1;
+        let prevDateCount = 0;
+  
+        calendarControl.prevMonthLastDate = calendarControl.getPreviousMonthLastDate();
+        let prevMonthDatesArray = [];
+        let calendarDays = calendarControl.daysInMonth(
+          calendar.getMonth() + 1,
+          calendar.getFullYear()
+        );
+        // dates of current month
+        for (let i = 1; i < calendarDays; i++) {
+          if (i < calendarControl.firstDayNumber()) {
+            prevDateCount += 1;
+            document.querySelector(
+              ".calendar .calendar-body"
+            ).innerHTML += `<div class="prev-dates"></div>`;
+            prevMonthDatesArray.push(calendarControl.prevMonthLastDate--);
+          } else {
+            document.querySelector(
+              ".calendar .calendar-body"
+            ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+          }
+        }
+        //remaining dates after month dates
+        for (let j = 0; j < prevDateCount + 1; j++) {
+          document.querySelector(
+            ".calendar .calendar-body"
+          ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+        }
+        calendarControl.highlightToday();
+        calendarControl.plotPrevMonthDates(prevMonthDatesArray);
+        calendarControl.plotNextMonthDates();
+
+
+
+
+
+        let dateElements = document.querySelectorAll('.calendar-body .number-item');
+    for (let i = 0; i < dateElements.length; i++) {
+        let dateElement = dateElements[i];
+        let dateKey = calendar.getFullYear() + '-' + (calendar.getMonth() + 1) + '-' + dateElement.getAttribute('data-num');
+        if (localStorage.getItem(dateKey)) {
+            dateElement.style.backgroundColor = 'red';
+            dateElement.style.borderRadius = '20px'
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+      },
+      attachEvents: function () {
+        let prevBtn = document.querySelector(".calendar .calendar-prev a");
+        let nextBtn = document.querySelector(".calendar .calendar-next a");
+        let todayDate = document.querySelector(".calendar .calendar-today-date");
+        let dateNumber = document.querySelectorAll(".calendar .dateNumber");
+        prevBtn.addEventListener(
+          "click",
+          calendarControl.navigateToPreviousMonth
+        );
+        nextBtn.addEventListener("click", calendarControl.navigateToNextMonth);
+        todayDate.addEventListener(
+          "click",
+          calendarControl.navigateToCurrentMonth
+        );
+        for (var i = 0; i < dateNumber.length; i++) {
+            dateNumber[i].addEventListener(
+              "click",
+              calendarControl.selectDate,
+              false
+            );
+        }
+      },
+      highlightToday: function () {
+        let currentMonth = calendarControl.localDate.getMonth() + 1;
+        let changedMonth = calendar.getMonth() + 1;
+        let currentYear = calendarControl.localDate.getFullYear();
+        let changedYear = calendar.getFullYear();
+        if (
+          currentYear === changedYear &&
+          currentMonth === changedMonth &&
+          document.querySelectorAll(".number-item")
+        ) {
+          document
+            .querySelectorAll(".number-item")
+            [calendar.getDate() - 1].classList.add("calendar-today");
+        }
+      },
+      plotPrevMonthDates: function(dates){
+        dates.reverse();
+        for(let i=0;i<dates.length;i++) {
+            if(document.querySelectorAll(".prev-dates")) {
+                document.querySelectorAll(".prev-dates")[i].textContent = dates[i];
+            }
+        }
+      },
+      plotNextMonthDates: function(){
+       let childElemCount = document.querySelector('.calendar-body').childElementCount;
+       //7 lines
+       if(childElemCount > 42 ) {
+           let diff = 49 - childElemCount;
+           calendarControl.loopThroughNextDays(diff);
+       }
+
+       //6 lines
+       if(childElemCount > 35 && childElemCount <= 42 ) {
+        let diff = 42 - childElemCount;
+        calendarControl.loopThroughNextDays(42 - childElemCount);
+       }
+
+      },
+      loopThroughNextDays: function(count) {
+        if(count > 0) {
+            for(let i=1;i<=count;i++) {
+                document.querySelector('.calendar-body').innerHTML += `<div class="next-dates">${i}</div>`;
+            }
+        }
+      },
+      attachEventsOnNextPrev: function () {
+        calendarControl.plotDates();
+        calendarControl.attachEvents();
+      },
+      init: function () {
+        calendarControl.plotSelectors();
+        calendarControl.plotDates();
+        calendarControl.attachEvents();
+      }
+    };
+    calendarControl.init();
+  }
+  
+  const calendarControl = new CalendarControl();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
