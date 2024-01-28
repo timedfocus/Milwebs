@@ -3618,7 +3618,7 @@ margin-top: 40px;
 align-items: center;
 
 
-" class="need">
+" class="need" id="pagelocation">
 
 
 <div style="display: flex; flex-direction: column; row-gap: 100px;" class="problemcausingdiv">
@@ -6562,6 +6562,11 @@ localStorage.setItem('totalMinutes1_' + monthKey, newTotal);
 document.addEventListener('DOMContentLoaded', function() {
 
 window.onload = function() {
+
+  
+  location.href = "#pagelocation";
+
+  
     var thirdPageDiv = document.querySelector('.thirdpage');
     var bgImageo = localStorage.getItem('bgImageo');
 
