@@ -6,6 +6,8 @@
     <title>Timedfocus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Iconscout Link For Icons -->
+
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26HVPNNJ6N"></script>
     <link rel="shortcut icon" type="image/x-icon" href="imagesforweb/TimedFocus-removebg-preview.png"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -2975,7 +2977,8 @@ opacity: 1;
 
 
 .thirdpage{
-  background-image: url('imagesforweb/2151035266_auto_custom_colored_toned_light_ai.jpg');
+ /* background-image: url('imagesforweb/2151035266_auto_custom_colored_toned_light_ai.jpg');*/
+  background-color: #bde0fe;
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -2985,7 +2988,8 @@ opacity: 1;
 }
 
 .anotherbody{
-  background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+ /* background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);*/
+  background-color: #bde0fe;
 
 background-size: cover;
 background-repeat: no-repeat;
@@ -3409,7 +3413,7 @@ opacity: 1;
 
 
 .thirdpage{
-  background-image: url('imagesforweb/2151035286_auto_custom_colored_toned_light_ai.jpg');
+  background-image: url('imagesforweb/bright-pop-landscape-design_auto_custom.jpg');
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -3419,7 +3423,7 @@ opacity: 1;
 }
 
 .anotherbody{
-  background-image: url('imagesforweb/autumn-night-with-lantern-hanging-scene-generated-by-ai_auto_custom.jpg');
+  background-image: url('imagesforweb/clearoff (4).jpeg');
 
 background-size: cover;
 background-repeat: no-repeat;
@@ -4103,30 +4107,12 @@ align-items: center;
         </div>
         
         <div>
-        <button class="resetstats" onclick="
-          
-        document.getElementById('longbreak-indicators').innerHTML = '0'
-        
-        document.getElementById('shortbreak-indicators').innerHTML = '0'
 
-        
-        document.getElementById('pomodoro-indicators').innerHTML = '0'
-        
-        
-        document.querySelector('.totalminutes1').innerHTML = '0'
-
-        
-
-  
-  var shortBreakSaveTime = localStorage.getItem('shortBreakSaveTime');
-  
-    localStorage.removeItem('shortBreakIndicators');
-
-    var longbreak = localStorage.getItem('shortBreakSaveTime');
-        
-        
-        " style="height: 100px; width: 100px; margin-bottom: 5px; border-radius: 20px; background-color: black; color: white; border: none;">Reset Statistics</button>
+        <button class="resetstats"  style="height: 100px; width: 100px; margin-bottom: 5px; border-radius: 20px; background-color: black; color: white; border: none;"></button>
   </div>
+
+
+
 
   </div>
 
@@ -4151,6 +4137,10 @@ align-items: center;
           <div class="totalminutes" style="display: inline-block;">0</div>
         </div>
 
+
+        <div>
+      <a href="pagescreated.html" style="background-color: black; color: white; border-radius: 10px; height: 40px; align-items: center; justify-content: center; display: flex;">View Full Statistics</a>
+      </div>
 
   
     </div>
@@ -6394,6 +6384,34 @@ margin-right: 20px;
 </div><!----mom-->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
     <script>
 
@@ -6474,18 +6492,70 @@ function saveTotalMinutes1() {
   var totalMinutes1 = document.querySelector('.totalminutes1').textContent;
   localStorage.setItem('totalMinutes1', totalMinutes1);
   localStorage.setItem('totalMinutes1SaveTime', new Date().getTime());
+
+
+  var totalMinutes1 = document.querySelector('.totalminutes1').textContent;
+    var today = new Date();
+    var dateKey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    if (totalMinutes1) {
+        localStorage.setItem(dateKey, totalMinutes1);
+    }
+
+
+
 }
 
 
 
-document.querySelector('.resetstats').addEventListener('click', function(){
+function saveyou(){
+  
+  var totalMinutes1 = document.querySelector('.totalminutes1').textContent;
+  var today = new Date();
+  var dateKey = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  localStorage.setItem('totalMinutes1', totalMinutes1);
+  localStorage.setItem('totalMinutes1SaveTime', new Date().getTime());
+  localStorage.setItem('totalMinutes1_' + dateKey, totalMinutes1);
+  console.log('totalMinutes1:', totalMinutes1);
 
-  localStorage.removeItem('longBreakIndicators');
-  localStorage.removeItem('pomodoroIndicators');
-  localStorage.removeItem('shortBreakIndicators');
-  localStorage.removeItem('totalMinutes1');
 
-})
+
+
+
+}
+
+
+function saveme(){
+  
+
+  var oldTotalMinutes1 = Number(document.querySelector('.totalminutes1').textContent);
+
+// Update totalMinutes1
+if (document.querySelector('.workmins').value.trim() === '') {
+ document.querySelector('.totalminutes1').innerHTML = oldTotalMinutes1 + 25;
+} else {
+ document.querySelector('.totalminutes1').innerHTML = oldTotalMinutes1 + Number(document.querySelector('.workmins').value);
+}
+
+
+// Get the new totalMinutes1 value
+var newTotalMinutes1 = Number(document.querySelector('.totalminutes1').textContent);
+
+// Calculate the increment
+var increment = newTotalMinutes1 - oldTotalMinutes1;
+
+var today = new Date();
+var monthKey = today.getFullYear() + '-' + (today.getMonth() + 1);  // Key for each month
+
+// Retrieve the existing total for the month, if any, and add the increment to it
+var existingMinutes = Number(localStorage.getItem('totalMinutes1_' + monthKey)) || 0;
+var newTotal = existingMinutes + increment;
+
+// Save the new total back to local storage
+localStorage.setItem('totalMinutes1_' + monthKey, newTotal);
+
+}
+
+
 
 
 
@@ -7951,15 +8021,15 @@ function timer() {
 saveTotalMinutes();
 
 
-if (document.querySelector('.workmins').value.trim() === '') {
-    document.querySelector('.totalminutes1').innerHTML = Number(document.querySelector('.totalminutes1').innerHTML) + 25;
-} else {
-    document.querySelector('.totalminutes1').innerHTML = Number(document.querySelector('.totalminutes1').innerHTML) + Number(document.querySelector('.workmins').value);
-};
+
 
 
 
 saveTotalMinutes1();
+
+saveme();
+
+saveyou();
 
   
 
@@ -9915,6 +9985,5 @@ function validateInput(event) {
     </script>
   </body>
 </html>
-
 
 
