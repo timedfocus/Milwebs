@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- SEO meta tags -->
-    <link rel="shortcut icon" type="image/x-icon" href="imagesforweb/TimedFocus-removebg-preview.png"/>
     <meta name="description" content="Timedfocus is a web app that enhances your productivity with personalized backgrounds, music, custom timer, desktop notifications, to-do lists, and mainly focusing on the Pomodoro Technique, a proven time management method that helps you work efficiently and effectively.">
     <meta name="keywords" content="pomodoro timer, pomodoro technique, productivity app, focus timer, time management, work cycle, break time, task list, to-do list, background music, desktop notifications, time tracking, timeboxing, custom timer, focus booster, focus mode, distraction-free, study timer, work session, pomodoro tracker, pomodoro method, productivity tool, focus app, timer app, pomodoro clock">
 
     <meta name="author" content="Timedfocus">
+
+    
 
 
 
@@ -22,6 +23,9 @@
 
     <title>Statistics</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="imagesforweb/iconfor.ico"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="imagesforweb/TimedFocus-removebg-preview.png"/>
   </head>
 
 <style>
@@ -600,18 +604,189 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+  .first{
+  display: flex; flex-direction: column; row-gap: 200px;
+  margin-top: 50px;
+}
+
+
+
+.second{
+  display: flex; flex-direction: column; row-gap: 200px; align-items: center; justify-content: center;
+}
+
+
+.third{
+  width:370px; height: 900px;
+}
+
+.fourth{
+  width:370px; height: 400px;
+}
+ 
+ 
+ }
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+ @media screen and (min-width: 601px) and (max-width: 1100px) {
+ 
+
+
+
+  .first{
+  display: flex; flex-direction: column; row-gap: 200px;
+  margin-top: 50px;
+}
+
+
+
+.second{
+  display: flex; flex-direction: column; row-gap: 200px; align-items: center; justify-content: center;
+}
+
+
+.third{
+  width:370px; height: 900px;
+}
+
+.fourth{
+  width:370px; height: 400px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*laptop below*/
+
+@media screen and (min-width: 1101px) {
+
+.first{
+  display: flex; flex-direction: column; row-gap: 90px;
+}
+
+.second{
+  display: flex; flex-direction: row; column-gap: 100px; align-items: center; justify-content: center;
+}
+
+.third{
+  width:500px; height: 1000px;
+}
+
+.fourth{
+  width:500px; height: 1000px;
+}
+
+ 
+ }
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 
   <body style="background-color: rgb(0, 0, 0); overflow-y: auto;">
 
-    <div style="display: flex; flex-direction: column; row-gap: 60px;">
+    <div  class="first">
 
-    <div style="display: flex; flex-direction: row; column-gap: 100px; align-items: center; justify-content: center;">
+    <div  class="second">
 
 
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <canvas id="myChart" style="width:500px; height: 400px;"></canvas>
+        <canvas id="myChart"  class="third"></canvas>
               <div>
     
                 <button class="prevmont glowing">Show Previous Days</button>
@@ -623,7 +798,7 @@
 
 
     <div style="display: flex; flex-direction: column; align-items: center;">
-    <canvas id="myChart1" style="width:500px; height: 400px;"></canvas>
+    <canvas id="myChart1"  class="fourth"></canvas>
           <div>
 
             <button class="prevmonth glowing-bt">Show Previous Months</button>
